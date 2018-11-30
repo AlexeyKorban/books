@@ -1,7 +1,7 @@
-package local.ldwx.service;
+package ru.ldwx.service;
 
-import local.ldwx.dao.BookDao;
-import local.ldwx.model.Book;
+import ru.ldwx.dao.BookDao;
+import ru.ldwx.model.Book;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,10 +1,10 @@
-package local.ldwx.service;
+package ru.ldwx.dao;
 
-import local.ldwx.model.Book;
+import ru.ldwx.model.Book;
 
 import java.util.List;
 
-public interface BookService {
+public interface BookDao {
     void addBook(Book book);
 
     void updateBook(Book book);
@@ -17,6 +17,5 @@ public interface BookService {
 
     List<Book> listBooks();
 
-    List<Book> searchBooks(String searchParameter, String searchText);
-
+    List<Book> searchBooks(String searchParameter, Object searchText);
 }

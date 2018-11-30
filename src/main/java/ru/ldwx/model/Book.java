@@ -1,4 +1,4 @@
-package local.ldwx.model;
+package ru.ldwx.model;
 
 import javax.persistence.*;
 

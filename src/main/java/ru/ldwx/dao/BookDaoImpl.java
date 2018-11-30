@@ -1,6 +1,6 @@
-package local.ldwx.dao;
+package ru.ldwx.dao;
 
-import local.ldwx.model.Book;
+import ru.ldwx.model.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;

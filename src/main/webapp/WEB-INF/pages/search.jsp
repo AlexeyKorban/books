@@ -29,7 +29,7 @@
         <c:forEach items="${listBooks}" var="book">
             <tr>
                 <td>${book.title}</td>
-                <td class="size" max>${book.description}</td>
+                <td class="size">${book.description}</td>
                 <td>${book.author}</td>
                 <td>${book.isbn}</td>
                 <td>${book.printYear}</td>

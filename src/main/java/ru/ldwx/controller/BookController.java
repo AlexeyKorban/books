@@ -1,7 +1,7 @@
-package local.ldwx.controller;
+package ru.ldwx.controller;
 
-import local.ldwx.model.Book;
-import local.ldwx.service.BookService;
+import ru.ldwx.model.Book;
+import ru.ldwx.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.support.PagedListHolder;

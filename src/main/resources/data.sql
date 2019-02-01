@@ -1,20 +1,4 @@
-USE test;
-
-DROP TABLE IF EXISTS book;
-
-CREATE TABLE book (
-	id INT(10) NOT NULL AUTO_INCREMENT,
-	title VARCHAR(100) NOT NULL,
-	description VARCHAR(255) NOT NULL,
-	author VARCHAR(100) NOT NULL,
-	isbn VARCHAR(20) NOT NULL,
-	printYear INT(4) NOT NULL,
-	readAlready BIT(1) NOT NULL DEFAULT 0,
-	PRIMARY KEY(id))
-
-ENGINE = InnoDB DEFAULT CHARSET = utf8;
-
-INSERT INTO book (title, description, author, isbn, printYear) VALUES 
+INSERT INTO book (title, description, author, isbn, printYear) VALUES
 	('Java: A Beginners Guide, Sixth Edition', 'description', 'Herbert Schildt', '9780071809252', 2014),
 	('Java: The Complete Reference, Tenth Edition', 'description', 'Herbert Schildt', '9781259589331', 2017),
 	('Head First Java, 2nd Edition', 'description', 'Kathy Sierra', '9780596009205', 2005),

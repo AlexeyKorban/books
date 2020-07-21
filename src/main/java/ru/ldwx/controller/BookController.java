@@ -1,13 +1,13 @@
 package ru.ldwx.controller;
 
-import ru.ldwx.model.Book;
-import ru.ldwx.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ru.ldwx.model.Book;
+import ru.ldwx.service.BookService;
 
 import java.util.List;
 
@@ -34,10 +34,10 @@ public class BookController {
     }
 
     @RequestMapping(value = "/books/add", method = RequestMethod.POST)
-    public String addBook(@ModelAttribute("book") Book book){
-        if(book.getId() == 0){
+    public String addBook(@ModelAttribute("book") Book book) {
+        if (book.getId() == 0) {
             this.bookService.addBook(book);
-        }else {
+        } else {
             this.bookService.updateBook(book);
         }
 
@@ -45,14 +45,14 @@ public class BookController {
     }
 
     @RequestMapping("/remove/{id}")
-    public String removeBook(@PathVariable("id") int id){
+    public String removeBook(@PathVariable("id") int id) {
         this.bookService.removeBook(id);
 
         return "redirect:/books";
     }
 
     @RequestMapping("edit/{id}")
-    public String editBook(@RequestParam(required = false) Integer page, @PathVariable("id") int id, Model model){
+    public String editBook(@RequestParam(required = false) Integer page, @PathVariable("id") int id, Model model) {
         Book book = this.bookService.getBookById(id);
         this.bookService.makeRead(book);
         model.addAttribute("book", book);
@@ -61,8 +61,9 @@ public class BookController {
 
         return "books";
     }
+
     @RequestMapping("makeread/{id}")
-    public String makeRead(@RequestParam(required = false) Integer page, @PathVariable("id") int id, Model model){
+    public String makeRead(@RequestParam(required = false) Integer page, @PathVariable("id") int id, Model model) {
         Book book = this.bookService.getBookById(id);
         this.bookService.makeRead(book);
 
@@ -71,8 +72,8 @@ public class BookController {
 
 
     @RequestMapping(value = "books/search")
-    public String booksSearch(@RequestParam("searchParameter")String searchParameter,
-                              @RequestParam("searchText")String searchText,
+    public String booksSearch(@RequestParam("searchParameter") String searchParameter,
+                              @RequestParam("searchText") String searchText,
                               Model model) {
         List<Book> books = bookService.searchBooks(searchParameter, searchText);
         model.addAttribute("book", new Book());
